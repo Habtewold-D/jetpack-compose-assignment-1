@@ -26,5 +26,17 @@ fun CourseListScreen(
                 )
             )
         }
-    ) 
+    ) { paddingValues ->
+        LazyColumn(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(paddingValues),
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            items(courses) { course ->
+                CourseCard(course = course)
+            }
+        }
     }
+} 
