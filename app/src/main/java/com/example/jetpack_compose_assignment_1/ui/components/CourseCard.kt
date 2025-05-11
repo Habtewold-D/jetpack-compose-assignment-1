@@ -65,6 +65,23 @@ fun CourseCard(
                     contentDescription = if (expanded) "Show less" else "Show more"
                 )
             }
+
+            // Expandable content
+            if (expanded) {
+                Spacer(modifier = Modifier.height(16.dp))
+                Divider()
+                Spacer(modifier = Modifier.height(16.dp))
+                
+                Text(
+                    text = "Description",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = course.description,
+                    style = MaterialTheme.typography.bodyMedium
+                )
                 
                 Spacer(modifier = Modifier.height(16.dp))
                 
