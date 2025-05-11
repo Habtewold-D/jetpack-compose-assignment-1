@@ -6,9 +6,12 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetpack_compose_assignment_1.data.Course
+import com.example.jetpack_compose_assignment_1.data.SampleData
 import com.example.jetpack_compose_assignment_1.ui.components.CourseCard
+import com.example.jetpack_compose_assignment_1.ui.theme.JetpackComposeAssignment1Theme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,5 +41,14 @@ fun CourseListScreen(
                 CourseCard(course = course)
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun CourseListScreenPreview() {
+    JetpackComposeAssignment1Theme {
+        CourseListScreen(courses = SampleData.courses)
     }
 } 

@@ -11,8 +11,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetpack_compose_assignment_1.data.Course
+import com.example.jetpack_compose_assignment_1.ui.theme.JetpackComposeAssignment1Theme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -97,5 +99,22 @@ fun CourseCard(
                 )
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun CourseCardPreview() {
+    JetpackComposeAssignment1Theme {
+        CourseCard(
+            course = Course(
+                title = "Introduction to Computer Science",
+                code = "CS101",
+                creditHours = 3,
+                description = "An introductory course covering fundamental concepts of computer science.",
+                prerequisites = "None"
+            )
+        )
     }
 } 
